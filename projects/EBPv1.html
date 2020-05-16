@@ -99,7 +99,7 @@
 										<figcaption>Fig 6: Motor pulley: 12 teeth, HTD-5M profile</figcaption>
 										</br>
 										<img src="../images/EBPv1/EBP_wheel_pulley_2.PNG" alt="" data-position="center center" />
-										<figcaption>Fig 8: Wheel pulley CAD model</figcaption>
+										<figcaption>Fig 8: Wheel pulley CAD model. Note the concave shape to it.</figcaption>
 										</br>
 										<img src="../images/EBPv1/IMG_20171224_004646.jpg" alt="" data-position="center center" />
 										<figcaption>Fig 10: PLA pulley printed in 3 parts, ready for gluing</figcaption>
@@ -124,7 +124,7 @@
 											The pulley was printed in three parts, either in PLA or ABS. I found both materials to have their own strengths (PLA in stiffness, and ABS in greater heat tolerance and toughness). However both materials worked fine as belt pulleys in my v1 electric longboard project. The pulley sections were simply glued together with cyanoacrylate glue (for a PLA pulley) or chemically welded with acetone (in the case of an ABS pulley). Figure 10 on the right shows a printed PLA pulley ready to be glued.</p>
 											<p>To transfer the torque between the motor and the wheel, I just used 15 mm wide, 1350 mm length timing belt (i.e. 270T). In order to route the path of the belt around the frame, and to also provide a means to adjust belt tension, I designed a belt tensioner in Solidworks to be 3D printed in ABS. This was one of the most challenging parts of the build; I didn't have a 3D model of the bicycle, and the bicycle's frame arm was angled in all three axes relative to both the wheel and the motor pulleys, so required multiple design iterations even with careful hand measurements. Fortunately it was thanks to 3D printing that I was able to quickly iterate and converge on the correct angles. Often it was not immediately obvious that the tensioner was misaligned until the whole setup is run, during which the belt rides up on one side of the idler and grinds down the plastic, as shown in Figure 9 on the left.</br>
 											The final tensioner design uses three stacked 808 bearings (commonly found in skateboard wheels) held in place by a long M8 bolt. Large washers cap both ends of the bearing stack, acting as flanges. These flanges are supported by greased roller thrust bearings to handle any inadvertent axial load from the belt. Finally the assembly is capped with brass bearings and held by a U-shaped 3D printed piece. This piece can rotate about the vertical Z-axis on another 3D printed piece, and both pieces are clamped to an arm on the bicycle frame.</p>
-											<p>To give a clearer picture of how the powertrain is set up, here is a video (with a very early version belt tensioner however). Apologies for the lack of audio, as my phone's microphone was playing up during filming.</p>
+											<p>To give a clearer picture of how the powertrain is set up, here is a video (with a very early version belt tensioner). Apologies for the lack of audio, as my phone's microphone was playing up during filming.</p>
 											<p align="center"><iframe width="640" height="360" src="https://www.youtube.com/embed/0hQ5FPFY0Uk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
 										</div>
 									</div>
@@ -147,7 +147,7 @@
 										<figcaption>Fig 12: Original bicycle to be retrofitted with electric powertrain.</figcaption>
 										</br>
 										<img src="../images/EBPv1/IMG_20180126_103521.jpg" alt="" data-position="center center" />
-										<figcaption>Fig 14: 6mm aluminium plate where the motor is bolted to</figcaption>
+										<figcaption>Fig 14: 6mm aluminium plate which the motor is bolted to</figcaption>
 									</a>
 									<div class="content">
 										<div class="inner">
@@ -164,7 +164,7 @@
 										<figcaption>Fig 13: Installed motor mount with everything attached</figcaption>
 										</br>
 										<img src="../images/EBPv1/IMG_20180126_155540.jpg" alt="" data-position="center center" />
-										<figcaption>Fig 15: Closeup of the motor mount. ABS frame clamps shown with green arrows.</figcaption>
+										<figcaption>Fig 15: Closeup of the motor mount. Green arrows show ABS clamping pieces which hold onto the bicycle frame.</figcaption>
 									</a>
 								</section>
 								
@@ -190,7 +190,7 @@
 									</div>
 									<a class="image">
 										<img src="../images/EBPv1/IMG_20180101_202619.jpg" alt="" data-position="center center" />
-										<figcaption>Fig 16: The battery, charger, and soft-start circuitry are housed in the large bottle shaped enclosure.</figcaption>
+										<figcaption>Fig 16: The battery, charger, and soft-start circuitry are housed in the large bottle shaped enclosure. Twisting the blue cap turns on the bike, and sets the maximum commanded current.</figcaption>
 									</a>
 								</section>
 							</section>
@@ -201,8 +201,9 @@
 									<header class="major">
 										<h2>Conclusion</h2>
 									</header>
-									<p>This project is one of my most favourite to ride. Being a bicycle, I can go over 40 km/h without any worries of falling, compared to going 40 km/h standing on a plank with 8 cm diameter wheels. Although this isn't a mountain bike with suspension, I've still taken it offroad on gentler trails, and it's amazing to breeze through flat or uphill trails as if they were downhill. The thin wheels don't give much traction, but the friction & drag from them is significantly lower, and it's fun to skid around corners on gravel.</p>
-									<p>The powertrain gives plenty of power for such a light vehicle, and is much quieter than a two-stroke engine that some other conversion kits use. Range is somewhere around 30km if you don't pedal, but this can be easily doubled by going gentle on the throttle and pedalling a bit, particularly when accelerating.</p>
+									<p>This project is one of my most favourite to ride. Being a bicycle, I can go over 40 km/h without any worries of falling, compared to going 40 km/h standing on a plank with 8 cm diameter wheels. Although this isn't a mountain bike with suspension, I've still taken it offroad on gentler trails, and it's amazing to breeze through flat or uphill trails as if they were downhill. The thin wheels don't give much traction, but the friction & drag from them is significantly lower, and it's fun to skid around dirt corners.</p>
+									<p>The powertrain is much quieter than a two-stroke engine that some other conversion kits use, and gives plenty of power for such a light vehicle. All up, the parts only add around 2kg of weight to the bicycle, primarily in the centre of the frame, so it doesn't affect weight distribution at all.</br>
+									Range is somewhere around 30km on flat ground if you don't pedal, but this can be easily doubled by going gentle on the throttle and pedalling a bit, particularly when accelerating.</p>
 									<p>The only thing I have to complain about this is the belt drive setup creates a noticeable amount of drag when coasting. It would be nice to have some kind of one way mechanism similar to the chain sprocket on the other side of the wheel to enable freewheeling and increase efficiency. This would prevent regenerative braking from being possible however, but it shouldn't be too much of an issue as the bicycle already has regular brakes.</p>
 									<p align="center"><img width="900" src="../images/EBPv1/IMG_20180203_182213.jpg" alt="" data-position="center center" /></p>
 								</div>

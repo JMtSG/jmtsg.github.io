@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-166813491-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		  gtag('config', 'UA-166813491-1');
+		</script>
+		<title>John Mai - Surveillance Units</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<!-- Note: The "styleN" class below should match that of the banner element. -->
+					<header id="header" class="alt style2">
+						<a href="../index.html" class="logo"><strong>John Mai</strong></a>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="landing.html">Landing</a></li>
+							<li><a href="generic.html">Generic</a></li>
+							<li><a href="elements.html">Elements</a></li>
+						</ul>
+						<ul class="actions stacked">
+							<li><a href="#" class="button primary fit">Get Started</a></li>
+							<li><a href="#" class="button fit">Log In</a></li>
+						</ul>
+					</nav>
+
+				<!-- Banner -->
+				<!-- Note: The "styleN" class below should match that of the header element. -->
+					<section id="banner" class="style2">
+						<div class="inner">
+							<span class="image">
+								<img src="../images/surveillance/banner.jpg" alt="" />
+							</span>
+							<header class="major">
+								<h1>Standalone surveillance units</h1>
+							</header>
+							<div class="content">
+								<p>Camera + compute units for visual observation</p>
+							</div>
+						</div>
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h2>Custom camera surveillance</h2>
+									</header>
+									<p>With commercial camera surveillance solutions, my experience was that it usually comes to this:</p>
+									<ul style="margin-top:-30px;">
+										<li>Robust</li>
+										<li>Affordable</li>
+										<li>Easy to use</li>
+									</ul>
+									<p>Now pick at most 2.</p>
+									<p>A lot of the existing solutions I found simply didn't meet all these requirements; most of them used a naive approach to detect motion, which would lead to many false postive alarms caused by shadows & tree branches, while many of the ones that did use more sophisticated algorithms required a monthly subscription fee. Not to mention the privacy concerns associated with uploading the video stream to an unknown server, and the bandwidth required to do so. (My home internet connection had 1 Mbps uplink at most).</p>
+									<p>I felt that this was the perfect time to make my own custom solution to fit my needs. I had seen a lot of people doing similar projects online, and I noticed some potential issues which I wanted to also address in my solution.</p>
+								</div>
+							</section>
+
+						<!-- Two -->
+							<section id="two" class="spotlights">
+								<section>
+									<a class="image">
+										<img src="../images/surveillance/mgcam1.jpg" alt="" data-position="center center" />
+										<figcaption>Fig 1: A camera node located far from the house Wi-Fi connection</figcaption>
+										</br>
+										<img src="../images/surveillance/mgcam2.jpg" alt="" data-position="center center" />
+										<figcaption>Fig 2: A zoom lens allows the camera to monitor areas even further away</figcaption>
+										</br>
+										<img src="../images/surveillance/fycam.jpg" alt="" data-position="center center" />
+										<figcaption>Fig 3: A combination of wide angle and narrow angle lens cameras on another node</figcaption>
+										</br>
+										<img src="../images/surveillance/central.jpg" alt="" data-position="center center" />
+										<figcaption>Fig 4: Central components</figcaption>
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>Issue #1: Common points of failure</h3>
+											</header>
+											<p>Namely, I'm referring to three things:</p>
+											<ul style="margin-top:-30px;">
+											  <li>Reliance on an internet connection for cloud based processing and storage</li>
+											  <li>Reliance on a single server for processing</li>
+											  <li>Reliance on flash storage</li>
+											</ul>
+											<p>On the first dot point, I'm referring to systems that rely on a server located offsite that is paid for by a subscription service and handles video stream processing and storage. There are benefits to this setup- more powerful hardware is available for processing, and the data can be easily accessed from anywhere in the world. However in my case, I am limited to a 1 Mbps uplink, which can barely handle a single 240p-360p video, making streaming from multiple video sources to an offsite server infeasible. Furthermore, I didn't think the associated costs for renting a server or buying a subscription service were worth it.</p>
+											<p>Of course, we can avoid the uplink bottleneck by having a server located within the LAN, and streaming video to it from each camera. This gives us the benefit of still having powerful hardware to perform processing, although at the cost of some additional difficulty accessing video streams when we're not on the same network. One issue still remaining with this however is the reliance on a robust connection between the camera nodes and the central server. This is rarely an issue for nodes hardwired into the network, but many of my nodes are placed too far away from the house that running ethernet out to them would be a major undertaking. Thus, they must rely on a wireless connection, which although I've found to be fairly reliable, the possibility of connection dropouts is still a concern.</p>
+											<p>Finally, I've also seen DIY solutions forgo a constant client-server connection, instead streaming video straight to onboard flash storage, usually a microSD card. A network connection would still be required to occasionally offload the video data to a NAS, but in the event of a network dropout, the node can continue functioning at 100% for days or weeks more, depending on the capacity of the onboard storage. While this is a great solution for applications such as trailcams which only capture occasional photographs and short video clips, I was concerned about the longevity of a microSD card that would have HD video written to it constantly. I wanted the nodes I made to be reliable enough to function for years without maintenance, as I would not be present to fix anything, so I wanted to find a way to keep wear on the microSD card to a minimum</p>
+											<p>My solution is comprised of the following elements:</p>
+											<ul style="margin-top:-30px;">
+											  <li>Medium quality (2MP) and below cameras located further away will have their own onboard compute</li>
+											  <li>Higher quality cameras located closer will be hardwired in using PoE over CAT5e cabling, and use a central server for processing</li>
+											  <li>Power supplied to both types of nodes will be primarily mains, but with a battery backup</li>
+											  <li>A local HDD will serve as the primary storage for all cameras, but another server located where I am (offsite) will occasionally synchronise to it</li>
+											</ul>
+											<p>Figures 1 & 2 show an example of a node located too far to be hardwired in. It utilises an "Orange Pi PC", a $15 SBC which comes with a 1.3 GHz quad core ARM CPU, 1GB RAM, and CSI connector for a camera. I'm using a 2MP CMOS camera which is connected to the SBC by a ribbon cable, with a zoom lens made for smartphones clipped on the front allowing monitoring an area 20 m away. The two are coupled together with a simple adapter mount I 3D printed. The unit is powered by 20V DC, which is stepped down to 5V by the buck converter located on the lid. This eliminates the issue of brownout that would be encountered if the unit was fed 5V from the source, which would drop considerably over the length of the power cable.</p>
+											<p>Figure 3 shows another node with a similar setup but with two cameras; a narrow angle camera for detail, and a wide angle camera for context. These cameras have had their IR filter removed for night time operation, though the narrow angle camera is fitted with an external IR filter that can be toggled using an electromagnet. All components are housed in 3D printed cases, and painted green to blend in with surrounding foliage (not pictured). Again there is an external Wi-Fi adapter for communications.</p>
+											With this setup, the SBC does the majority of the processing on the temporary filesystem residing in its RAM. This keeps wear on the microSD card to a minimum. When it needs to, it will offload the video to the NAS via Wi-Fi and delete the file from RAM. In the event that the NAS cannot be reached however, e.g. when a car comes by and blocks line of sight to the Wi-Fi access point, only then is the video sent from RAM to the microSD card to await sending once the network connection is re-established. This clears the limited RAM for further video processing.</p>
+											<p>Figure 4 shows the components mounted in the central location (please excuse the mess, this photo was taken during the testing phase). The 1TB HDD forms the bulk of the storage, backed up to another offsite HDD. The step up converter steps up 12V from either the main power supply or the backup lead-acid battery to 48V required for the 802.3af PoE standards to power the 4MP HD cameras. These are connected to the unmanaged switch/PoE injector. "Compute #1" appears to be some kind of NUC I found in a dumpster, which I fixed up and fashioned a case for. It has an i7 CPU and 16GB of RAM, plenty of processing for future additional cameras. "Compute #2" handles other things like SSH tunnels, VPN, DNS, and access to the HDD from offsite. I intended it to be as reliable as possible, something which I couldn't place faith in the dumpster found NUC, as great as its specs may be.</p>
+										</div>
+									</div>
+								</section>
+
+
+								<section>
+									<a href="../index.html" class="image">
+										<img src="../images/pic09.jpg" alt="" data-position="top center" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>Issue #2: Robust detection algorithm</h3>
+											</header>
+											<p>Writeup in progress! Check back soon</p>							
+										</div>
+									</div>
+								</section>
+
+
+
+							</section>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="https://www.linkedin.com/in/john-mai-641a73b5/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>

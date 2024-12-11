@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-166813491-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		  gtag('config', 'UA-166813491-1');
+		</script>
+		<title>John Mai - BMS</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<!-- Note: The "styleN" class below should match that of the banner element. -->
+					<header id="header" class="alt style2">
+						<a href="../index.html" class="logo"><strong>John Mai</strong></a>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="landing.html">Landing</a></li>
+							<li><a href="generic.html">Generic</a></li>
+							<li><a href="elements.html">Elements</a></li>
+						</ul>
+						<ul class="actions stacked">
+							<li><a href="#" class="button primary fit">Get Started</a></li>
+							<li><a href="#" class="button fit">Log In</a></li>
+						</ul>
+					</nav>
+
+				<!-- Banner -->
+				<!-- Note: The "styleN" class below should match that of the header element. -->
+					<section id="banner" class="style2">
+						<div class="inner">
+							<span class="image">
+								<img src="../images/BMS/banner.png" alt="" />
+							</span>
+							<header class="major">
+								<h1>Battery Management System</h1>
+							</header>
+							<div class="content">
+								<p>The all-in-one battery handler</p>
+							</div>
+						</div>
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h2>Lithium-Ion Battery Handling</h2>
+									</header>
+									<p>Lithium-ion batteries offer significant advantages over other battery chemistries in power density, energy density, weight, and form factor options. However, while misusing lead-acid or nickel based batteries may simply result in excess heat or venting, the same mistreatment of lithium based batteries can lead to fire or even explosion. Lithium-ion batteries are very finicky, and require a specific charging curve and hard limits on upper & lower voltage bounds.</p>
+									<p>This battery management system (BMS) is designed to handle all these requirements and more; this all in one PCB is a replacement to both the off-the-shelf BMS currently in the v2 Electric Longboard as well as its soft start power switch. Specific features include:</p>
+									<ul style="margin-top:-30px;">
+										<li>Support for 12S lithium-ion batteries</li>
+										<li>Individual cell voltage monitoring</li>
+										<li>Built in CC/CV charging with a wide input voltage range</li>
+										<li>Cell balancing</li>
+										<li>Current monitoring</li>
+										<li>Coulomb counting</li>
+										<li>Soft start power</li>
+									</ul>
+									<p>The project is currently a work in progress. The first revision of the schematic and PCB design have been almost completed on Altium Designer, and the next steps are manufacture, assembly, and testing.</p>
+								</div>
+							</section>
+
+						<!-- Two -->
+							<section id="two" class="spotlights">
+								<section>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>Features</h3>
+											</header>
+											<p>The heart of the BMS is an STM32F303. This MCU handles all the sensing, processing, and control for peripheral components. Connected to it via SPI is an LTC6803 IC, used to interface with the 12S (12 cells in series) lithium ion battery pack, which can range from 36V to 50.4V. Through this IC, I can sense individual cell voltages, and control discharging to individual load resistors to balance cells.</p>
+											<p>The PCB has a built in DC-DC converter, which allows it to take in a wide range of voltages, then step it up/down to charge the battery. This is controlled by the STM32F303's onboard DAC, controlling a reference voltage level to the DC-DC converter IC. A combination of a step down switching IC and a linear regulator supplies the 5V rail and a low noise 3.3V rail to power the components on the board.</p>
+											<p>A power monitor IC is used in conjunction with a shunt to measure current in/out of the battery. The IC features a 16-bit delta-sigma ADC, which offers higher precision over the STM32's onboard ADC. Furthermore, this allows it to be situated next to the shunt, and communicate with the central MCU over I2C, reducing measurement noise.</p>
+										</div>
+									</div>
+									<a class="image">
+										<img src="../images/BMS/BMS_1_top.png" alt="" data-position="center center" />
+										<figcaption>Fig 1: Top side of PCB design</figcaption>
+										</br>
+										<img src="../images/BMS/BMS_1_bottom.png" alt="" data-position="center center" />
+										<figcaption>Fig 2: Bottom side of PCB design</figcaption>
+									</a>
+								</section>
+
+
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="https://www.linkedin.com/in/john-mai-641a73b5/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>

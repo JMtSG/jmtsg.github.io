@@ -1,0 +1,242 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-166813491-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		  gtag('config', 'UA-166813491-1');
+		</script>
+		<title>John Mai - Electric Bicycle v1</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<!-- Note: The "styleN" class below should match that of the banner element. -->
+					<header id="header" class="alt style2">
+						<a href="../index.html" class="logo"><strong>John Mai</strong></a>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="landing.html">Landing</a></li>
+							<li><a href="generic.html">Generic</a></li>
+							<li><a href="elements.html">Elements</a></li>
+						</ul>
+						<ul class="actions stacked">
+							<li><a href="#" class="button primary fit">Get Started</a></li>
+							<li><a href="#" class="button fit">Log In</a></li>
+						</ul>
+					</nav>
+
+				<!-- Banner -->
+				<!-- Note: The "styleN" class below should match that of the header element. -->
+					<section id="banner" class="style2">
+						<div class="inner">
+							<span class="image">
+								<img src="../images/EBPv1/banner.jpg" alt="" />
+							</span>
+							<header class="major">
+								<h1>Electric Bicycle - v1</h1>
+							</header>
+							<div class="content">
+								<p>Higher speed commuting</p>
+							</div>
+						</div>
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h2>Tradeoffs</h2>
+									</header>
+									<p>Electric longboards are cool, but not the most practical, especially where you need to carry a lot of cargo, travel over unpaved trails, or travel further than a few kilometres at a time. This is where the electric bike project comes in. This electric bicycle travels over 30km on a single charge, and is more comfortable to ride for long periods of time compared to the electric longboard. Being a bicycle, it is also a lot easier to provide assistance to the powertrain by pedalling, and it travels over rougher terrain that would be untraversable by a longboard.</p>
+								</div>
+							</section>
+
+						<!-- Two -->
+							<section id="two" class="spotlights">
+								<section>
+									<a class="image">
+										<img src="../images/EBPv1/IMG_20170527_063654.jpg" alt="" data-position="center center" />
+										<figcaption>Fig 1: Motor with new holes drilled and being tapped</figcaption>
+										</br>
+										<img src="../images/EBPv1/IMG_20170527_064420.jpg" alt="" data-position="center center" />
+										<figcaption>Fig 3: Closeup of a broken arm on the motor</figcaption>
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>Motor</h3>
+											</header>
+											<p>The heart of this project is an old brushless DC outrunner motor that I was given. It was a pretty beefy motor, probably a 6374 size motor with a peak power of 3-5 kW, so using it in a longboard would've been overkill. The main structure of the motor appears to be aluminium, and two sections of the mounting plate had broken off, possibly due to a design oversight. There are two sets of pre-existing tapped M4 holes on the mounting plate, and if the outer ring of holes is used to secure the motor, the forces have to travel from the stator core, around the inner ring of holes, up to the outer ring of holes. As you can see in the broken sections of the motor, there is very little material around the inner ring of holes, placing a large amount of stress on what material is present and possibly causing a premature failure. I drilled and tapped four new M4 holes as close to the centre as possible, and made a new mounting plate for the motor out of stainless steel. The new mounting plate is bolted to the motor with short countersunk M4 bolts in these new holes, and another four M4 tapped holes in the mounting plate can be used to secure the motor to a mount. The location of these holes appears a bit arbitrary, but they were located in areas with the greatest clearance behind the plate.</p>
+										</div>
+									</div>
+									<a class="image">
+										<img src="../images/EBPv1/IMG_20170527_101017.jpg" alt="" data-position="center center" />
+										<figcaption>Fig 2: Motor with the new stainless steel mounting plate</figcaption>
+										</br>
+										<img src="../images/EBPv1/IMG_20170618_112812.jpg" alt="" data-position="center center" />
+										<figcaption>Fig 4: Motor with new mounting plate attached</figcaption>
+									</a>
+								</section>
+
+								<section>
+									<a class="image">
+										<img src="../images/EBPv1/motor_pulley.jpg" alt="" data-position="center center" />
+										<figcaption>Fig 6: Motor pulley: 12 teeth, HTD-5M profile</figcaption>
+										</br>
+										<img src="../images/EBPv1/EBP_wheel_pulley_2.PNG" alt="" data-position="center center" />
+										<figcaption>Fig 8: Wheel pulley CAD model. Note the concave shape to it.</figcaption>
+										</br>
+										<img src="../images/EBPv1/IMG_20171224_004646.jpg" alt="" data-position="center center" />
+										<figcaption>Fig 10: PLA pulley printed in 3 parts, ready for gluing</figcaption>
+										</br>
+										<img src="../images/EBPv1/IMG_20180120_112339.jpg" alt="" data-position="center center" />
+										<figcaption>Fig 11: A disassembled prototype pulley tensioner</figcaption>
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>Transmission</h3>
+											</header>
+											<p>The motor appears to have a 190 Kv rating (i.e. 1 volt back emf per 190 RPM speed). This meant that with a 6S lipo battery (6*3.7=22.2V nominal), the motor could spin at up to 4200 RPM. I want to aim for a top speed of around 40-45 kmph, and the rear wheel on the bicycle I'm using has a circumference of around 2.14 m.</br>
+											4200 RPM / 60 = 70 rotations per second at the motor</br>
+											70 rot/s * 2.14m wheel circum. * 3.6 multiplier = 539.3 km/h wheelspeed using 1:1 gearing</br>
+											539.3 kmph / 45 kmph = 11.98</br>
+											So I need a gear ratio of about 12:1.</br>
+											Looking at the available options for chain driven sprockets, I just couldn't find a sprocket small enough for the motor and a sprocket large enough for the wheel to give me a 12:1 reduction. However small timing belt pulleys are available, and I bought a 12 tooth, 16 mm width, HTD5M profile timing belt pullet with a bore diameter of 8 mm, which fitted perfectly on the motor shaft.</br>
+											For the wheel pulley, I opted for a 160 tooth pulley for a theoretical top speed of about 50 km/h, knowing that this would probably be a top speed of around 40-45 km/h in the real world after drag, friction, and other losses. While pulleys of this size weren't readily available for purchase, I could model the pulley I wanted and 3D print it. I generated a pulley with a HTD5M tooth profile and 160 teeth using <a href="https://www.thingiverse.com/thing:16627">this customisable openSCAD script</a>, and exported it as an .STL file. This file ended up having way over 20000 faces, too many for Solidworks to even load, so I used MeshLab, an open source tool for processing 3D triangular meshes, to reduce the number of faces using quadric edge collapse decimation.</br>
+											In Figure 5 on the left, you can see pulley imported into Solidworks with sections cut out to minimise print material. Each of the nine spokes in the pulley has two small slots to thread cable ties through, that are then used to secure the pulley to the spokes of the bicycle wheel. The whole pulley has been divided into three sections for printing, as the whole pulley could not fit on my 3D printer's build plate.</br>
+											In Figure 8 on the right, you can see that the pulley's centre is offset from the outer perimeter, which allows the pulley to sit flush against the bicycle's wheel, as the spokes on the wheel are slanted. (Figure 7 on the left.)</br>
+											The pulley was printed in three parts, either in PLA or ABS. I found both materials to have their own strengths (PLA in stiffness, and ABS in greater heat tolerance and toughness). However both materials worked fine as belt pulleys in my v1 electric longboard project. The pulley sections were simply glued together with cyanoacrylate glue (for a PLA pulley) or chemically welded with acetone (in the case of an ABS pulley). Figure 10 on the right shows a printed PLA pulley ready to be glued.</p>
+											<p>To transfer the torque between the motor and the wheel, I just used 15 mm wide, 1350 mm length timing belt (i.e. 270T). In order to route the path of the belt around the frame, and to also provide a means to adjust belt tension, I designed a belt tensioner in Solidworks to be 3D printed in ABS. This was one of the most challenging parts of the build; I didn't have a 3D model of the bicycle, and the bicycle's frame arm was angled in all three axes relative to both the wheel and the motor pulleys, so required multiple design iterations even with careful hand measurements. Fortunately it was thanks to 3D printing that I was able to quickly iterate and converge on the correct angles. Often it was not immediately obvious that the tensioner was misaligned until the whole setup is run, during which the belt rides up on one side of the idler and grinds down the plastic, as shown in Figure 9 on the left.</br>
+											The final tensioner design uses three stacked 808 bearings (commonly found in skateboard wheels) held in place by a long M8 bolt. Large washers cap both ends of the bearing stack, acting as flanges. These flanges are supported by greased roller thrust bearings to handle any inadvertent axial load from the belt. Finally the assembly is capped with brass bearings and held by a U-shaped 3D printed piece. This piece can rotate about the vertical Z-axis on another 3D printed piece, and both pieces are clamped to an arm on the bicycle frame.</p>
+											<p>To give a clearer picture of how the powertrain is set up, here is a video (with a very early version belt tensioner). Apologies for the lack of audio, as my phone's microphone was playing up during filming.</p>
+											<p align="center"><iframe width="640" height="360" src="https://www.youtube.com/embed/0hQ5FPFY0Uk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+										</div>
+									</div>
+									<a class="image">
+										<img src="../images/EBPv1/EBP_wheel_pulley_1.PNG" alt="" data-position="center center" />
+										<figcaption>Fig 5: Wheel pulley CAD model</figcaption>
+										</br>
+										<img src="../images/EBPv1/wheel_spoke_slope.jpg" alt="" data-position="center center" />
+										<figcaption>Fig 7: The slope of a typical bicycle wheel's spokes requires the wheel pulley to be concave</figcaption>
+										</br>
+										<img src="../images/EBPv1/IMG_20180114_221827.jpg" alt="" data-position="center center" />
+										<figcaption>Fig 9: Result of a misaligned belt tensioner</figcaption>
+									</a>
+								</section>
+																
+								
+								<section>
+									<a class="image">
+										<img src="../images/EBPv1/original_bike.jpg" alt="" data-position="center center" />
+										<figcaption>Fig 12: Original bicycle to be retrofitted with electric powertrain.</figcaption>
+										</br>
+										<img src="../images/EBPv1/IMG_20180126_103521.jpg" alt="" data-position="center center" />
+										<figcaption>Fig 14: 6mm aluminium plate which the motor is bolted to</figcaption>
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>Mounting</h3>
+											</header>
+											<p>The base of this project was an old road bicycle I just had lying around. The intention was to retrofit this old bike with an electric powertrain, while keeping it functional as a regular bike so it is still rideable even if the batteries die.</p>
+											<p>I didn't have any complex machining tools, so I used a flat 6 mm plate of aluminium shaped with an angle grinder and hand saws as the motor mount. The motor was be bolted to this plate with a rubber gasket to dampen vibration and noise, and its shaft passes through a 10 mm hole to which the motor pulley is attached with set screws.</p>
+											<p>Figure 15 on the right shows 3D printed ABS parts which clamp onto two arms of the frame, to which the motor mounting plate is bolted. With this setup, the motor can be mounted very securely to the frame without any holes needing to be drilled through it. The entire assembly can also be easily disassembled for maintenance or replacement of components, but there aren't any components in this assembly which should wear out.</p>
+										</div>
+									</div>
+									<a class="image">
+										<img src="../images/EBPv1/IMG_20180126_155557.jpg" alt="" data-position="center center" />
+										<figcaption>Fig 13: Installed motor mount with everything attached</figcaption>
+										</br>
+										<img src="../images/EBPv1/IMG_20180126_155540.jpg" alt="" data-position="center center" />
+										<figcaption>Fig 15: Closeup of the motor mount. Green arrows show ABS clamping pieces which hold onto the bicycle frame.</figcaption>
+									</a>
+								</section>
+								
+								
+								<section>
+									<a class="image">
+										<img src="../images/EBPv1/IMG_20180126_155540_closeup.jpg" alt="" data-position="center center" />
+										<figcaption>Fig 17: VESC motor controller with FETs exposed to airflow for cooling.</figcaption>
+										</br>
+										<img src="../images/EBPv1/IMG_20200516_020616.jpg" alt="" data-position="center center" />
+										<figcaption>Fig 18: Soft-start power control circuit concept</figcaption>
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>Electrical</h3>
+											</header>
+											<p>The electrical system on this bicycle is very similar to the v1 electric longboard, since its design was known to work well and I didn't need many additional features. The major differences are a higher capacity, higher power battery pack, a sensored motor which can handle more current than the VESC motor controller can deliver, and the ability to set the motor current command range.</p>
+											<p>For the battery, I chose a single 6S 12,000mAh lipo pack rated at 10C. This was housed in a composite printed ABS and PVC pipe case which I made to somewhat resemble a large water bottle, shown to the left in Figure 16. Directly below the bottle, you can see the VESC motor controller and capacitor bank also housed in grey ABS. Further below that is the motor itself. Figure 17 to the right shows a closeup just below the bottle, where the VESC is housed with its FETs exposed to airflow for cooling. Polyimide kapton tape is used as a thin barrier against dust and moisture. With this setup, I only have issues with overheating on very long and steep uphill runs (which are very rare in Perth) and even then the FETs cool off very quickly.</p>
+											<p>Similar to the v1 electric longboard, the main power is controlled by a MOSFET with a soft-start driver (Figure 18). This is controlled by twisting the blue knob at the top of the bottle, which contains a switch & potentiometer device. Twisting this also allows the rider to set the maximum commanded current, and the throttle adjusts to linearly command throttle over this range. This is all controlled by an arduino pro mini, which senses the throttle and bottle cap positions, processes the readings, and then sends the appropriate current command to the motor controller via UART.</p>
+											<p align="center"><iframe width="700" height="400" src="https://www.youtube.com/embed/AcxbfVsuS1U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+										</div>
+									</div>
+									<a class="image">
+										<img src="../images/EBPv1/IMG_20180101_202619.jpg" alt="" data-position="center center" />
+										<figcaption>Fig 16: The battery, charger, and soft-start circuitry are housed in the large bottle shaped enclosure. Twisting the blue cap turns on the bike, and sets the maximum commanded current.</figcaption>
+									</a>
+								</section>
+							</section>
+
+						<!-- Three -->
+							<section id="three">
+								<div class="inner">
+									<header class="major">
+										<h2>Conclusion</h2>
+									</header>
+									<p>This project is one of my most favourite to ride. Being a bicycle, I can go over 40 km/h without any worries of falling, compared to going 40 km/h standing on a plank with 8 cm diameter wheels. Although this isn't a mountain bike with suspension, I've still taken it offroad on gentler trails, and it's amazing to breeze through flat or uphill trails as if they were downhill. The thin wheels don't give much traction, but the friction & drag from them is significantly lower, and it's fun to skid around dirt corners.</p>
+									<p>The powertrain is much quieter than a two-stroke engine that some other conversion kits use, and gives plenty of power for such a light vehicle. All up, the parts only add around 2kg of weight to the bicycle, primarily in the centre of the frame, so it doesn't affect weight distribution at all.</br>
+									Range is somewhere around 30km on flat ground if you don't pedal, but this can be easily doubled by going gentle on the throttle and pedalling a bit, particularly when accelerating.</p>
+									<p>The only thing I have to complain about this is the belt drive setup creates a noticeable amount of drag when coasting. It would be nice to have some kind of one way mechanism similar to the chain sprocket on the other side of the wheel to enable freewheeling and increase efficiency. This would prevent regenerative braking from being possible however, but it shouldn't be too much of an issue as the bicycle already has regular brakes.</p>
+									<p align="center"><img width="900" src="../images/EBPv1/IMG_20180203_182213.jpg" alt="" data-position="center center" /></p>
+								</div>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="https://www.linkedin.com/in/john-mai-641a73b5/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>

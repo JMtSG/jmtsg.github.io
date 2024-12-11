@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+<!--
+  Forty by HTML5 UP
+  html5up.net | @ajlkn
+  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166813491-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-166813491-1');
+    </script>
+    <title>John Mai - Aerial 35mm Photography</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+  </head>
+  <body class="is-preload">
+
+    <!-- Wrapper -->
+      <div id="wrapper">
+
+        <!-- Header -->
+        <!-- Note: The "styleN" class below should match that of the banner element. -->
+          <header id="header" class="alt style2">
+            <a href="../index.html" class="logo"><strong>John Mai</strong></a>
+          </header>
+
+        <!-- Menu -->
+          <nav id="menu">
+            <ul class="links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="landing.html">Landing</a></li>
+              <li><a href="generic.html">Generic</a></li>
+              <li><a href="elements.html">Elements</a></li>
+            </ul>
+            <ul class="actions stacked">
+              <li><a href="#" class="button primary fit">Get Started</a></li>
+              <li><a href="#" class="button fit">Log In</a></li>
+            </ul>
+          </nav>
+
+        <!-- Banner -->
+        <!-- Note: The "styleN" class below should match that of the header element. -->
+          <section id="banner" class="style2">
+            <div class="inner">
+              <span class="image">
+                <img src="../images/aerial_35mm/banner.jpg" alt="" />
+              </span>
+              <header class="major">
+                <h1>35mm Aerial Photography</h1>
+              </header>
+              <div class="content">
+                <p>Analog photography from a different perspective</p>
+              </div>
+            </div>
+          </section>
+
+        <!-- Main -->
+          <div id="main">
+
+            <!-- One -->
+              <section id="one">
+                <div class="inner">
+                  <header class="major">
+                    <h2>Getting a film camera airborne</h2>
+                  </header>
+
+                  <!-- Video -->
+                  <div class="video-container">
+                    <video autoplay loop muted playsinline>
+                      <source src="../images/aerial_35mm/aerial_35mm.mp4" type="video/mp4">
+                    </video>
+                  </div>
+
+<p>
+The Kodak 735 is a fixed focus F/9 35mm film camera with a glass lens and plastic body made in Brazil for Kodak in the 1990s. It's very simple to operate with its motorised film advance feature, so it's very much just point and shoot with this camera.
+<br>
+<br>
+As shown in the above video, I've mounted it via some 3D printed brackets onto an 8" FPV quadcopter, built from salvaged parts from old DJI mavic drones. To actuate the shutter, a 9g servo is attached via another 3D printed bracket, and controlled via a switch on my ELRS radio over a spare AUX channel.
+<br>
+It was actually a bit convoluted to setup due to the lack of documentation in Betaflight (the flight control firmware I'm using on this quadcopter), which is very much geared towards multirotors and away from anything with servos, so I'll outline the steps here in case anyone else encounters the same difficulties that I did:
+<ul style="margin-top:-30px; padding-left: 70px;">
+  <li>SERVO_TILT off in the Configuration, you don't need the automatic stabilisation mode</li>
+  <li>Enable CHANNEL_FORWARDING in the Configuration tab</li>
+  <li>Ignore the CAM_STAB mode, disable it</li>
+  <li>Uncheck all the boxes under the Servos tab, they mess things up. The min/mid/max, rate & direction settings do nothing for this use case. The servo values will also not change later once your servo is setup.</li>
+  <li>Map your servo to the correct pin in the CLI: resource SERVO 1 A08 or whatever the correct pin is</li>
+  <li>By default, channel forwarding will map AUX 1 to SERVO 1, AUX 2 to SERVO 2, etc.</li>
+  <li>I want AUX 3 to go to SERVO 1, so in the CLI I run set channel_forwarding_start = 6 (it's 4 by default, referring to AUX 1), thereby mapping AUX 3 to SERVO 1, AUX 4 to SERVO 2, etc.</li>
+</ul>
+Here's my view when I'm controlling it:
+                  <!-- Video -->
+                  <div class="video-container">
+                    <video autoplay loop muted playsinline>
+                      <source src="../images/aerial_35mm/example_shot.mp4" type="video/mp4">
+                    </video>
+                  </div>
+This was actually the first roll of film through it, so I had yet to fine tune the placement of the rectangle guide in the FPV video frame to help me compose my shots- fixed once I had that roll of film developed.
+<br>
+<br>
+Here are some more shots:
+</p>
+      <div class="photo-grid">
+        <a href="../images/aerial_35mm/shot-1_A.jpg">
+          <img src="../images/aerial_35mm/shot-1.jpg" alt="Photo 1">
+        </a>
+
+        <a href="../images/aerial_35mm/shot-2_A.jpg">
+          <img src="../images/aerial_35mm/shot-2.jpg" alt="Photo 2">
+        </a>
+
+        <a href="../images/aerial_35mm/shot-3_A.jpg">
+          <img src="../images/aerial_35mm/shot-3.jpg" alt="Photo 3">
+        </a>
+
+        <a href="../images/aerial_35mm/shot-4_A.jpg">
+          <img src="../images/aerial_35mm/shot-4.jpg" alt="Photo 4">
+        </a>
+      </div>
+
+      <style>
+        .photo-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr); /* Two columns */
+          gap: 10px; /* Optional: space between images */
+        }
+      
+        .photo-grid img {
+          width: 100%;
+          height: auto;
+        }
+      </style>
+
+<p>
+<br>
+For those interested, the Heirisson Island and Optus Stadium shots were on 1Shot ISO400 film, a relatively unheard of film stock I picked up at Kmart (that was the only film stock they stocked locally). 
+I found it to be very grainy and desaturated, with an odd green tint at times.
+<br>
+All subsequent shots were on Fujifilm ISO400, which yielded much better colour range.
+</p>
+                </div>
+
+              </section>
+          </div>
+
+      <style>
+        .video-container {
+          display: flex;
+          justify-content: center;
+          margin-top: 20px;
+          margin-bottom: 20px;
+        }
+
+        .video-container video {
+          max-width: 100%;
+          height: auto;
+        }
+      </style>
+
+        <!-- Footer -->
+          <footer id="footer">
+            <div class="inner">
+              <ul class="icons">
+                <li><a href="https://www.linkedin.com/in/john-mai-641a73b5/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+              </ul>
+            </div>
+          </footer>
+
+      </div>
+
+    <!-- Scripts -->
+      <script src="../assets/js/jquery.min.js"></script>
+      <script src="../assets/js/jquery.scrolly.min.js"></script>
+      <script src="../assets/js/jquery.scrollex.min.js"></script>
+      <script src="../assets/js/browser.min.js"></script>
+      <script src="../assets/js/breakpoints.min.js"></script>
+      <script src="../assets/js/util.js"></script>
+      <script src="../assets/js/main.js"></script>
+
+  </body>
+</html>

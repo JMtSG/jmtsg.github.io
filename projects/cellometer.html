@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<!--
+  Forty by HTML5 UP
+  html5up.net | @ajlkn
+  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166813491-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-166813491-1');
+    </script>
+    <title>John Mai - CelloMeterAI</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+  </head>
+  <body class="is-preload">
+
+    <!-- Wrapper -->
+      <div id="wrapper">
+
+        <!-- Header -->
+        <!-- Note: The "styleN" class below should match that of the banner element. -->
+          <header id="header" class="alt style2">
+            <a href="../index.html" class="logo"><strong>John Mai</strong></a>
+          </header>
+
+        <!-- Menu -->
+          <nav id="menu">
+            <ul class="links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="landing.html">Landing</a></li>
+              <li><a href="generic.html">Generic</a></li>
+              <li><a href="elements.html">Elements</a></li>
+            </ul>
+            <ul class="actions stacked">
+              <li><a href="#" class="button primary fit">Get Started</a></li>
+              <li><a href="#" class="button fit">Log In</a></li>
+            </ul>
+          </nav>
+
+        <!-- Banner -->
+        <!-- Note: The "styleN" class below should match that of the header element. -->
+          <section id="banner" class="style2">
+            <div class="inner">
+              <span class="image">
+                <img src="../images/cellometer/overview.gif" alt="" />
+              </span>
+              <header class="major">
+                <h1><a href="https://github.com/JMtSG/CellometerAI">CellometerAI</a></h1>
+              </header>
+              <div class="content">
+                <p>Automated cell counting in microscopy</p>
+              </div>
+            </div>
+          </section>
+
+        <!-- Main -->
+          <div id="main">
+
+            <!-- One -->
+              <section id="one">
+                <div class="inner">
+                  <header class="major">
+                    <h2>Automating Cell Counting</h2>
+                    <a href="https://github.com/JMtSG/CellometerAI">https://github.com/JMtSG/CellometerAI</a>
+                  </header>
+
+                  <!-- Video -->
+                  <div class="video-container">
+                    <video autoplay loop muted playsinline>
+                      <source src="../images/cellometer/CellometerAI.mp4" type="video/mp4">
+                    </video>
+                  </div>
+
+<p>
+This project was created to assist with my friend's PhD research. The task at hand was to count the number of protoplasts in each well, to use for normalisation of measurements.
+Fortunately, photographs of each well could be captured through a microscope in her lab, which led to the idea of developing a tool to automatically count the number of cells, rather than relying on interns to do so manually.
+<br>
+<br>
+Prior to this, the extent of automated tools available to us for this task used classical image processing techniques such as Watershed segmentation, which required significant image pre-processing and was not robust against varying exposure and scale.
+<br>
+With the advent of open-source CNN-based image object detection models, it was trivial to take an existing pre-trained model such as <a href="https://docs.ultralytics.com/">Ultralytics YOLO</a> and repurpose it for our needs.
+The model simply requires a small amount of hand labelled data for fine-tune training, and some wrappers written around it to assist with image pre-processing and collation of model output data.
+<br>
+<br>
+This completed tool takes in a folder of microscope photographs, runs a sliding window over each to generate tiles that are passed through the YOLO model, filters and counts the detections, then provides a spreadsheet summary and annotated output images for review.
+</p>
+                </div>
+
+              </section>
+          </div>
+
+      <style>
+        .video-container {
+          display: flex;
+          justify-content: center;
+          margin-top: 20px;
+          margin-bottom: 20px;
+        }
+
+        .video-container video {
+          max-width: 100%;
+          height: auto;
+        }
+      </style>
+
+        <!-- Footer -->
+          <footer id="footer">
+            <div class="inner">
+              <ul class="icons">
+                <li><a href="https://www.linkedin.com/in/john-mai-641a73b5/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+              </ul>
+            </div>
+          </footer>
+
+      </div>
+
+    <!-- Scripts -->
+      <script src="../assets/js/jquery.min.js"></script>
+      <script src="../assets/js/jquery.scrolly.min.js"></script>
+      <script src="../assets/js/jquery.scrollex.min.js"></script>
+      <script src="../assets/js/browser.min.js"></script>
+      <script src="../assets/js/breakpoints.min.js"></script>
+      <script src="../assets/js/util.js"></script>
+      <script src="../assets/js/main.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-166813491-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		  gtag('config', 'UA-166813491-1');
+		</script>
+		<title>John Mai - Electric Longboard v1</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<!-- Note: The "styleN" class below should match that of the banner element. -->
+					<header id="header" class="alt style2">
+						<a href="../index.html" class="logo"><strong>John Mai</strong></a>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="landing.html">Landing</a></li>
+							<li><a href="generic.html">Generic</a></li>
+							<li><a href="elements.html">Elements</a></li>
+						</ul>
+						<ul class="actions stacked">
+							<li><a href="#" class="button primary fit">Get Started</a></li>
+							<li><a href="#" class="button fit">Log In</a></li>
+						</ul>
+					</nav>
+
+				<!-- Banner -->
+				<!-- Note: The "styleN" class below should match that of the header element. -->
+					<section id="banner" class="style2">
+						<div class="inner">
+							<span class="image">
+								<img src="../images/ELPv1/banner.jpg" alt="" />
+							</span>
+							<header class="major">
+								<h1>Electric Longboard - v1</h1>
+							</header>
+							<div class="content">
+								<p>Tackling the last mile transport problem</p>
+							</div>
+						</div>
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h2>Last mile transport</h2>
+									</header>
+									<p>Navigating a city can be time consuming especially without a car. In an ideal world, public transit networks would be dense enough such that you are never more than a comfortable walking distance from the next bus/train/tram station. What do you do then, when you're in a city designed around automobiles without one for yourself? For most of 2017, I was in L.A. California, taking time off from my studies to take an internship at NASA JPL. I wanted a way of quickly getting around L.A.; a car was out of the question on my limited budget, and while cycling held some promise, I just couldn't see myself pedalling 50 km from Pasadena to downtown to Santa Monica even on the best of days. Which leads to this project: A motorised longboard that could get me around the city as quickly as a bicycle, yet was portable enough to take onto public transit and could even fit in a suitcase for the flights between Perth and and the US.</p>
+								</div>
+							</section>
+
+						<!-- Two -->
+							<section id="two" class="spotlights">
+								<section>
+									<a class="image">
+										<img src="../images/ELPv1/1479693269100.jpg" alt="" data-position="center center" />
+										<figcaption>Fig 1: Two lengths of angle aluminium provide rigidity to the longboard</figcaption>
+										</br>
+										<img src="../images/ELPv1/IMG_20160914_152900.jpg" alt="" data-position="center center" />
+										<figcaption>Fig 2: Local scrapyard</figcaption>
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>Construction</h3>
+											</header>
+											<p>I wanted to try building my own longboard to form the base of this project, but I'd never built (or ridden) one before. I chose aluminium as the material of choice simply because it was easier for me to work with at the time (I had an angle grinder but no jigsaw). The material was sourced from a scrapyard that was selling offcuts for about $1/kg. I used an old piece of 3mm sheet metal that looked like it had a fair amount of pitting corrosion on it as the deck, and two lengths of 3mm thick angle extrusions to give it some rigidity</p>
+											<p>Now in hindsight, aluminium was a terrible choice of material. Weight-wise it was actually ok, but it was stiff as hell and transferred vibrations from the road surface straight to the rider. Making it flex more was also out of the question, as aluminium has a tendency to fatigue and fail even when operating in its elastic deformation region.
+											</br>Nevertheless, the board held up fine for over 6 months of daily use, and still works to this day.</p>
+										</div>
+									</div>
+									<a class="image">
+										<img src="../images/ELPv1/IMG_20161007_163808.jpg" alt="" data-position="center center" />
+										<figcaption>Fig 3: Old sheet of aluminium forms the deck of the longboard</figcaption>
+									</a>
+								</section>
+								
+								
+								<section>
+									<a class="image">
+										<img src="../images/ELPv1/IMG_20161027_113237.jpg" alt="" data-position="center center" />
+										<figcaption>Fig 6: Outer half of wheel pulley mount; the protrusions grip around the spokes of the wheel</figcaption>
+										</br>
+										<img src="../images/ELPv1/VID_20161230_142009.gif" alt="" data-position="center center" />
+										<figcaption>Fig 7: Completed powertrain with belt</figcaption>
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>Powertrain</h3>
+											</header>
+											<p>To drive the whole contraption, I chose to go with a single outrunner motor setup with reduction in the belt drive. This had several advantages:</p>
+											<ul style="margin-top:-30px;">
+											  <li>A single motor over multiple motors means only one motor driver is needed- this significantly reduces the cost.</li>
+											  <li>A single motor also means that only one transmission is needed, simplifying the design and reducing transmission losses for more efficiency and longer range.</li>
+											  <li>An external motor has more airflow than an in-wheel hub motor, so it can produce more power for longer durations with less worry of burning out.</li>
+											  <li>By not using a hub motor, I get more flexibility in choosing the type of wheel used and can obtain spares from sources other than the motor manufacturer.</li>
+											</ul>
+											<p>I first prototyped the parts with 3D printed versions to check for fit; I needed a mount for the motor, a wheel pulley, and the mounting hardware to clamp the pulley to the wheel.
+											</br>I then enlisted the help of a friend with a desktop CNC mill; in exchange for the 3D models so he could build his own electric longboard too, he helped me mill the parts that would have been near impossible to recreate using simple hand tools.</p>
+											<p>The design was kept as simple as possible; while abroad, I would only have basic hand tools to perform maintenance, and replacement parts were non-existent. In Figure 4, you can see that the mount is made from three pieces; two pieces clap to the longboard trucks with two M6 bolts, driven into one of the mounting pieces (there are threads cut into it). A third smaller bolt is driven into the longboard truck itself and stops the mount from rotating. Then the third mounting piece is connected to the first two with three M4 bolts in slots; this allows you to adjust the distance of the motor from the wheel, adjusting belt tension.</p>
+											<p>For the motor, I chose a Turnigy SK3 5064-236KV brushless outrunner motor. These are typically used for RC planes or cars, and I happened to come across a second hand listing for one of these for a fairly affordable price. The motor is rated for a peak power consumption of 1.8 kW, though this is severely limited by cooling.</p>
+										</div>
+									</div>
+									<a class="image">
+										<img src="../images/ELPv1/IMG_20170429_145702.jpg" alt="" data-position="center center" />
+										<figcaption>Fig 4: Side view of motor mount with wheel removed</figcaption>
+										</br>
+										<img src="../images/ELPv1/IMG_20161228_142802.jpg" alt="" data-position="center center" />
+										<figcaption>Fig 5: Completed setup (motor pulley & belt not pictured)</figcaption>
+									</a>
+								</section>
+								
+								
+								<section>
+									<a class="image">
+										<img src="../images/ELPv1/IMG_20161126_140937.jpg" alt="" data-position="center center" />
+										<figcaption>Fig 8: Mock layout of electrical components</figcaption>
+										</br>
+										<img src="../images/ELPv1/IMG_20170203_133117.jpg" alt="" data-position="center center" />
+										<figcaption>Fig 9: Soft-start & power control board</figcaption>
+										</br>
+										<img src="../images/ELPv1/IMG_20170101_171158.jpg" alt="" data-position="center center" />
+										<figcaption>Fig 10: VESC motor controller</figcaption>
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>Electrical</h3>
+											</header>
+											<p>For batteries, I chose two 3S 5200mAh lipo packs rated at 10C; I set the motor driver to draw up to 50A continuous out of these at a nominal voltage of 22.2V, although this levl would typically only be seen momentarily on acceleration or going up slopes. These fitted nicely between the two angle aluminium pieces underneath the board, and were padded with foam to prevent damage from impacts.</p>
+											<p>To drive the brushless DC motor, I used was a <a href="http://vedder.se/2015/01/vesc-open-source-esc/">VESC motor controller</a>, an open source motor controller with multiple benefits and features over standard hobby grade motor controllers. To name a few, it could provide information on instantaneous current draw, total current consumed, included a current control mode (as opposed to speed or duty-cycle control), and the most prominently, included field-oriented control. In this mode, you can drive the motor smoothly with full torque at zero speed, decrease noise in the motor, and (in theory) run with higher efficiency than regular 6-step commutation. The motor controller could drive the motor with up to 50-60A of current, limited mainly by the heat generated in the FETs. With a 22.2V nominal supply, I would be putting up to 1.3kW into the motor, which it handled no problem. Fortunately for me, the motor controller would overheat before the motor itself did, which was good as I had temperature feedback in the motor controller and not the motor, so the motor controller would scale back power output to prevent damage to the controller before the motor would get close to being damaged.
+											</br>In addition to the motor controller, I added in a soft-start feature which reduced inrush current when powering on the board. This was important as the capacitor bank at the input of the motor driver would draw very large currents on startup, putting increased wear on them and whatever switch I chose to use. This was performed with a large FET on some protoboard. An additional diode would bypass this FET when current was moving from the motor controller to the battery when using regenerative braking, reducing the load on this FET.</p>
+											<p>To control the setup, I didn't want to be tethered to the longboard, so I built a remote using a gutted Nintendo Wii mini-remote with an ATtiny85 and a HM-10 bluetooth 4.0 board. The remote is powered by a small 300mAh lipo battery and includes a microUSB charging circuit, and lasts over a week between charges. One thing I didn't consider when building the board was that the aluminium deck would block radio signals travelling from me to below the deck where the electronics were housed, so the bluetooth module on the longboard had to be placed in a separate compartment on the rear edge. Nevertheless, the setup worked flawlessly, and paired with its stored authentication key in less than a second upon powerup.</p>
+											<p>Here's a video of the first test of the motor; you can see that the motor hesitates momentariy on startup- this is because the motor doesn't have any sensors so the controller doesn't know its exact orientation and has to revert back to an open loop control mode to get it going. This wasn't an issue for me when riding the board though, since I would kick off from a standstill anyway, as starting from a standstill is quite energy intensive.</p>
+											<p align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/qGbv-9F5JZY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+										</div>
+									</div>
+									<a class="image">
+										<img src="../images/ELPv1/IMG_20170127_083938.jpg" alt="" data-position="center center" />
+										<figcaption>Fig 11: Bluetooth module mounted in separate compartment</figcaption>
+										</br>
+										<img src="../images/ELPv1/IMG_20170218_174337.jpg" alt="" data-position="center center" />
+										<figcaption>Fig 12: Gutted Wii mini remote with SMD ATtiny85 and HM-10 BLE module</figcaption>
+										</br>
+										<img src="../images/ELPv1/Screenshot_2017-02-26-18-07-09.png" alt="" data-position="center center" />
+										<figcaption>Fig 13: Since I'm using bluetooth to connect to the board, I can also connect to it using my smartphone to read realtime stats and control it</figcaption>
+									</a>
+								</section>
+							</section>
+
+						<!-- Three -->
+							<section id="three">
+								<div class="inner">
+									<header class="major">
+										<h2>Conclusion</h2>
+									</header>
+									<p>The project was a huge success in my opinion, I used this board to get around LA daily for over 6 months, racking up well over 1000 km. The board was waterproof, so I rode it without any issue in rainy weather, though the lack of fenders meant that the wheels would kick up a fair amount of water. While some parts did wear down eventually, they were simple to repair or replace, and maintenance could be performed with only simple hand tools. The longboard would get up to 40 km/h on a level surface, and got me up most of the hills I needed to get up in LA. Range was about 10-20 km, and was very dependent on how hard I pushed it. All up, it weighed about 5kg and was very portable, fitting in my suitcase for the plane trip from Perth to LA. It was also very easy to carry onto public transport, and I took it with me all over LA on the buses, subways, and light rail.</p>
+									<p align="center"><iframe width="840" height="473" src="https://www.youtube.com/embed/CGQ3cy0DNG4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+								</div>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="https://www.linkedin.com/in/john-mai-641a73b5/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>

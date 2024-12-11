@@ -1,0 +1,203 @@
+<!DOCTYPE HTML>
+<!--
+  Forty by HTML5 UP
+  html5up.net | @ajlkn
+  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166813491-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-166813491-1');
+    </script>
+    <title>John Mai - Digital Super8</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+  </head>
+  <body class="is-preload">
+
+    <!-- Wrapper -->
+      <div id="wrapper">
+
+        <!-- Header -->
+        <!-- Note: The "styleN" class below should match that of the banner element. -->
+          <header id="header" class="alt style2">
+            <a href="../index.html" class="logo"><strong>John Mai</strong></a>
+          </header>
+
+        <!-- Menu -->
+          <nav id="menu">
+            <ul class="links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="landing.html">Landing</a></li>
+              <li><a href="generic.html">Generic</a></li>
+              <li><a href="elements.html">Elements</a></li>
+            </ul>
+            <ul class="actions stacked">
+              <li><a href="#" class="button primary fit">Get Started</a></li>
+              <li><a href="#" class="button fit">Log In</a></li>
+            </ul>
+          </nav>
+
+        <!-- Banner -->
+        <!-- Note: The "styleN" class below should match that of the header element. -->
+          <section id="banner" class="style2">
+            <div class="inner">
+              <span class="image">
+                <img src="../images/digital_super8/banner.jpg" alt="" />
+              </span>
+              <header class="major">
+                <h1>Digital Super8</h1>
+              </header>
+              <div class="content">
+                <p>Project Cinemera</p>
+              </div>
+            </div>
+          </section>
+
+        <!-- Main -->
+          <div id="main">
+
+            <!-- One -->
+              <section id="one">
+                <div class="inner">
+
+                  <div style="text-align: center;">
+                    <a href="https://classiccameras.com.au/products/film-tested-agfa-200-super-8-movie-camera">
+                      <img src="../images/digital_super8/agfa_microflex_200.jpg" alt="Agfa Microflex 200" style="width: 100%; max-width: 800px; height: auto;">
+                    </a>
+                  </div>
+
+<p>
+The Microflex 200 is a compact lightweight movie camera built in the 1970s in Germany by Agfa. 
+It takes super-8 format film cartridges, and was a great entry point into videography for amateur filmmakers. 
+At the time of this writing however, super-8 film is $60 per 15 m cartridge, with an additional $50 for development and $90 for scanning. 
+All up, a total cost of $200 for a bit over 3 minutes of film at the standard 18 FPS.
+<br><br>
+I am fortunate to have one in my possession, but was seeking a more affordable alternative to make use of this lens and camera form factor. 
+To that end, I designed digital cartridge for it, one that could serve as a replacement for film & development. 
+I wanted it to be distinct from just any other digital camera though- I wanted to preserve the original vintage appearance and feel of this camera; the click of the shutter button, the whirring of the tape drive motor, and the clicking of the shutter gate. 
+I wanted the videos produced to closely resemble the original film footage it would've captured. Fortunately the super-8 film format is not known for high definition clarity or fidelity, so this shouldn't be a high bar to meet. 
+<div class="photo-grid">
+  <img src="../images/digital_super8/cad.gif" alt="Photo 1">
+  <img src="../images/digital_super8/overview2.jpg" alt="Photo 2">
+</div>
+
+<style>
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 10px; /* Optional: space between images */
+  }
+
+  .photo-grid img {
+    width: 100%;
+    height: auto;
+  }
+</style>
+<br>
+The heart of this contraption is an unofficial <a href="https://www.hackster.io/news/highly-unofficial-raspberry-pi-3b-mini-customized-for-tpcast-appears-for-sale-becd68d67a48">"Raspberry Pi 3B Mini" board</a>, essentially a Raspberry Pi 3B in a smaller form factor. 
+This is coupled with an 8MP IMX219 image sensor (used in the <a href="https://www.raspberrypi.com/products/camera-module-v2/">"Raspberry Pi Camera Module 2"</a>) attached to the film gate, WiFi module for offloading data, OLED screen for status monitoring, and the necessary power management and charging modules to manage the 21700 battery and provide stable voltage rails for the electronics and film drive motor (purely for ambience). 
+<br>
+The device could take still photographs with a double click of the original shutter button, or videos while the shutter button is held down. Following raw video capture, a processed video is encoded emulating the original super-8 film look, complete with sprocket hole, vertical jitter, and film grain. 
+Images and videos were stored on the SD card, on a separate partition to the read-only root partition of the SD card containing the source code and Armbian OS. These could be downloaded via WiFi, as the raspberry pi could either broadcast a WiFi hotspot or connect to an existing access point.
+<br><br>
+<div class="photo-grid">
+  <img src="../images/digital_super8/expose.jpg" alt="Internals of the digital cartridge">
+  <img src="../images/digital_super8/image_sensor.jpg" alt="IMX219 attached to the film gate">
+</div>
+
+<style>
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 10px; /* Optional: space between images */
+  }
+
+  .photo-grid img {
+    width: 100%;
+    height: auto;
+  }
+</style>
+<br>
+For what started as a simple idea, the actual implementation was rife with unexpected setbacks and technical difficulties. 
+To name a few:
+<ul style="margin-top:0px; padding-left: 70px;">
+  <li>Overheating of the ARM processor in hot ambient weather, as there is very little room for any cooling system. This was alleviated with small heatsinks plus copper tape to wick heat away from the processor.</li>
+  <li>Also due to the space constraints, EMI from the tape drive motor would cause artifacts to appear in the video recording. This was resolved with better wire routing, noise filtering on the voltage rails, and shielded cable.</li>
+  <li>The 1 GB RAM of the Raspberry Pi severely limited video encoding options. I was unable to use h265 or even h264, and had to settle for MP4V.</li>
+  <li>A mismatch between the chief ray angle of the super-8 camera's lens and the intended lens for the IMX219 would lead to vignetting and colour crosstalk (distortion). This led me down <a href="https://arxiv.org/abs/1911.13295">a rabbit hole of flat-field/colour correction and calibrating lens shading tables</a> to reduce the severity of this. Below is a comparison showing the effect of the lens shading table, and a visualisation of the lens shading table generated to correct this.</li>
+</ul>
+<div class="photo-grid">
+  <img src="../images/digital_super8/lst_comparison.gif" alt="Image capture without flat-field colour correction">
+  <img src="../images/digital_super8/lst.gif" alt="Lens Shading Table Visualisation">
+</div>
+
+<style>
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 10px; /* Optional: space between images */
+  }
+
+  .photo-grid img {
+    width: 100%;
+    height: auto;
+  }
+</style>
+<br>
+After working through all the issues however, I was rewarded with a capable camera platform that could capture and output videos like this:
+</p>
+
+<div class="video-container">
+                    <video autoplay loop muted playsinline>
+                      <source src="../images/digital_super8/VID_101.mp4" type="video/mp4">
+                    </video>
+                  </div>
+
+                </div>
+
+              </section>
+          </div>
+
+      <style>
+        .video-container {
+          display: flex;
+          justify-content: center;
+          margin-top: 20px;
+          margin-bottom: 20px;
+        }
+
+        .video-container video {
+          max-width: 100%;
+          height: auto;
+        }
+      </style>
+
+        <!-- Footer -->
+          <footer id="footer">
+            <div class="inner">
+              <ul class="icons">
+                <li><a href="https://www.linkedin.com/in/john-mai-641a73b5/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+              </ul>
+            </div>
+          </footer>
+
+      </div>
+
+    <!-- Scripts -->
+      <script src="../assets/js/jquery.min.js"></script>
+      <script src="../assets/js/jquery.scrolly.min.js"></script>
+      <script src="../assets/js/jquery.scrollex.min.js"></script>
+      <script src="../assets/js/browser.min.js"></script>
+      <script src="../assets/js/breakpoints.min.js"></script>
+      <script src="../assets/js/util.js"></script>
+      <script src="../assets/js/main.js"></script>
+
+  </body>
+</html>

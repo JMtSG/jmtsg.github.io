@@ -1,0 +1,188 @@
+<!DOCTYPE HTML>
+<!--
+  Forty by HTML5 UP
+  html5up.net | @ajlkn
+  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166813491-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-166813491-1');
+    </script>
+    <title>John Mai - Battery Truck Quadcopter</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+  </head>
+  <body class="is-preload">
+
+    <!-- Wrapper -->
+      <div id="wrapper">
+
+        <!-- Header -->
+        <!-- Note: The "styleN" class below should match that of the banner element. -->
+          <header id="header" class="alt style2">
+            <a href="../index.html" class="logo"><strong>John Mai</strong></a>
+          </header>
+
+        <!-- Menu -->
+          <nav id="menu">
+            <ul class="links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="landing.html">Landing</a></li>
+              <li><a href="generic.html">Generic</a></li>
+              <li><a href="elements.html">Elements</a></li>
+            </ul>
+            <ul class="actions stacked">
+              <li><a href="#" class="button primary fit">Get Started</a></li>
+              <li><a href="#" class="button fit">Log In</a></li>
+            </ul>
+          </nav>
+
+        <!-- Banner -->
+        <!-- Note: The "styleN" class below should match that of the header element. -->
+          <section id="banner" class="style2">
+            <div class="inner">
+              <span class="image">
+                <img src="../images/ultralr_drone/banner.jpg" alt="" />
+              </span>
+              <header class="major">
+                <h1>Long Range Quadcopter</h1>
+              </header>
+              <div class="content">
+                <p>Putting propellers on a battery pack</p>
+              </div>
+            </div>
+          </section>
+
+        <!-- Main -->
+          <div id="main">
+
+            <!-- One -->
+              <section id="one">
+                <div class="inner">
+
+                  <div style="text-align: center;">
+                    <img src="../images/ultralr_drone/batteries.jpg" alt="18650s" style="width: 100%; max-width: 800px; height: auto;">
+                </div>
+
+<p>
+This is a box of 18650 cells, previously used by someone in a DIY eBike project. They appeared to be Sinowatt 26PHA cells, 2600 mAh with a 7.8A max continuous discharge rating. 
+While nowhere near the highest-performing 18650s by any measure, these were still quite capable cells and well worth the low price. In addition to this, they still had an energy density higher than the high discharge li-po packs I typically use for drones:
+<br>
+<div class="photo-grid">
+  <img src="../images/ultralr_drone/energy_density.png" alt="Energy Density Comparison">
+  <img src="../images/ultralr_drone/power_density.png" alt="Power Density Comparison">
+</div>
+
+<style>
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 10px; /* Optional: space between images */
+  }
+
+  .photo-grid img {
+    width: 100%;
+    height: auto;
+  }
+</style>
+<br>
+On the left chart above is a comparison of energy densities (how much energy they store per unit weight) of a few different batteries. The batteries I had (green) don't have as high an energy density as other cylindrical li-ion cells (purple), but they still outperformed high discharge pouch cell li-po batteries (red). 
+<br>
+The right chart is a comparison of rated power density (maximum continuous discharge per unit weight). This is a less helpful chart, as each manufacturer will rate their batteries using different metrics. While cylindrical cells (purple) do typically have lower power density than their pouch counterparts, manufacturers will also rate their max discharge lower to limit temperatures and improve cycle life metrics. 
+On the other hand pouch cell li-pos intended for drones are assumed to have ample airflow for cooling, so manufacturers will inflate discharge ratings to appear more attractive than competitors, especially since cycle life is typically a lower priority for this application. Arguably internal resistance would be a better metric for comparing power density, but it isn't as easily translated to load handling capability. 
+<br>
+For fun, I included the Amprius Silicon Anode battery (gold) at the bottom, as it is one of the highest energy density batteries currently on the market. However, it comes with a steep price tag of over $3300 (AUD) and has to be imported from the US. In contrast, equivalent capacity 12V 50Ah LiFePO4 batteries can be purchased on eBay for under $200 from local retailers (shipping included). 
+<br><br>
+I wanted to use these cells to build an FPV platform that could fulfil a niche I was lacking: long range / high endurance. 
+Admittedly a more elegant solution could be had, but my box full of 18650s looked like a straightforward proverbial hammer to my problem. 
+I was much more familiar with multirotors than fixed wing platforms, and was prepared to go down this route <s>sacrificing</s> compensating for the inefficiency of such a platform by just loading up more batteries rather than contending with wing & airfoil geometries and long runways. 
+Obviously there are diminishing returns to this strategy, so I used <a href="https://www.ecalc.ch/" class="link">eCalc</a> to help find an acceptable balance between adding more battery weight for more energy capacity. 
+<br>
+Bi-blade props were selected for efficiency, and a 9" diameter was chosen as a balance between parts availability and maximising rotor size to increase efficiency. 
+A quadcopter design was chosen as it was the minimum number possible for stable flight without articulating rotors, also to increase efficiency. 
+<br><br>
+<div style="text-align: center;">
+  <img src="../images/ultralr_drone/ecalc.png" alt="eCalc" style="width: 100%; max-width: 1000px; height: auto;">
+</div>
+<br>
+The resultant quadcopter was unlike any I had designed and built previously; each of the 9" rotors was larger than an entire 3" class quadcopter. 
+These rotors generated over a kilogram of thrust each at full tilt, and considering its weight of just under 2kg gave it a maximum thrust to weight ratio over 2:1. 
+Despite my initial apprehension to it, <a href="https://www.casa.gov.au/drones/operator-accreditation-certificate/drone-weight-categories-and-requirements" class="link">it would actually be classed as a "very small" drone according to CASA's drone weight categories for the purposes of operator accreditation requirements.</a> 
+<br><br>
+As for the thrust to weight ratio of over double, I would actually consider this close to the minimum for an FPV multirotor craft. To give some context, my standard, fairly average 5" class quadcopter probably has a thrust to weight ratio in excess of 5:1. 
+(It's able to ascend directly upwards almost as fast as it is able to fly forward). This flying battery truck on the other hand handles like a brick, requiring ample room to pull out of dives. 
+Furthermore, the sheer number of batteries stacked up on it meant a unfamiliarly high moment of inertia, and I've never had to raise the PID gains on a flight controller as high as I did for this craft, just to counteract the angular momentum and maintain stability using the relatively underpowered powertrain.
+The chart below shows an initial pass during controller tuning, where I still saw overshoot despite reaching the maximum recommended Derivative gains. I would later have to sacrifice controller responsiveness to bring this within desirable limits. 
+<br><br>
+<div style="text-align: center;">
+  <img src="../images/ultralr_drone/pid_tuning.png" alt="PID Tuning" style="width: 100%; max-width: 700px; height: auto;">
+</div>
+<br>
+</p>
+
+<div class="photo-grid">
+  <img src="../images/ultralr_drone/battery_fitting.jpg" alt="Photo 3">
+  <img src="../images/ultralr_drone/brick_test.jpg" alt="Photo 4">
+</div>
+
+<style>
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 10px; /* Optional: space between images */
+  }
+
+  .photo-grid img {
+    width: 100%;
+    height: auto;
+  }
+</style>
+
+                </div>
+
+              </section>
+          </div>
+
+      <style>
+        .video-container {
+          display: flex;
+          justify-content: center;
+          margin-top: 20px;
+          margin-bottom: 20px;
+        }
+
+        .video-container video {
+          max-width: 100%;
+          height: auto;
+        }
+      </style>
+
+        <!-- Footer -->
+          <footer id="footer">
+            <div class="inner">
+              <ul class="icons">
+                <li><a href="https://www.linkedin.com/in/john-mai-641a73b5/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+              </ul>
+            </div>
+          </footer>
+
+      </div>
+
+    <!-- Scripts -->
+      <script src="../assets/js/jquery.min.js"></script>
+      <script src="../assets/js/jquery.scrolly.min.js"></script>
+      <script src="../assets/js/jquery.scrollex.min.js"></script>
+      <script src="../assets/js/browser.min.js"></script>
+      <script src="../assets/js/breakpoints.min.js"></script>
+      <script src="../assets/js/util.js"></script>
+      <script src="../assets/js/main.js"></script>
+
+  </body>
+</html>

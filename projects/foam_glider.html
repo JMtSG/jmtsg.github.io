@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<!--
+  Forty by HTML5 UP
+  html5up.net | @ajlkn
+  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166813491-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-166813491-1');
+    </script>
+    <title>John Mai - Budget Air Autonomy</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+  </head>
+  <body class="is-preload">
+
+    <!-- Wrapper -->
+      <div id="wrapper">
+
+        <!-- Header -->
+        <!-- Note: The "styleN" class below should match that of the banner element. -->
+          <header id="header" class="alt style2">
+            <a href="../index.html" class="logo"><strong>John Mai</strong></a>
+          </header>
+
+        <!-- Menu -->
+          <nav id="menu">
+            <ul class="links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="landing.html">Landing</a></li>
+              <li><a href="generic.html">Generic</a></li>
+              <li><a href="elements.html">Elements</a></li>
+            </ul>
+            <ul class="actions stacked">
+              <li><a href="#" class="button primary fit">Get Started</a></li>
+              <li><a href="#" class="button fit">Log In</a></li>
+            </ul>
+          </nav>
+
+        <!-- Banner -->
+        <!-- Note: The "styleN" class below should match that of the header element. -->
+          <section id="banner" class="style2">
+            <div class="inner">
+              <span class="image">
+                <img src="../images/foam_glider/banner.jpg" alt="" />
+              </span>
+              <header class="major">
+                <h1>Accessible Airborne Autonomy</a></h1>
+              </header>
+              <div class="content">
+                <p>A low budget aerial platform</p>
+              </div>
+            </div>
+          </section>
+
+        <!-- Main -->
+          <div id="main">
+
+            <!-- One -->
+              <section id="one">
+                <div class="inner">
+                  <header class="major">
+                    <!-- <h2>INSERT TITLE HERE</h2> -->
+                  </header>
+
+                  <div style="text-align: center;">
+                    <img src="../images/foam_glider/store_page.png" alt="Store page" style="width: 100%; max-width: 1000px; height: auto;">
+                </div>
+<br>
+<p>
+Turns out you can get a large foam glider for only $10. These are designed to be thrown around so are made from tough EPP foam, and their 84 cm wing span with a deep wing chord across the entire length should generate plenty of lift and allow for a sizeable payload.
+<br><br>
+With just another ~$20 in electronics, these can be converted into a full fledged plane. I've cut control surfaces out of the tail horizontal and vertical stabilisers, and extended them with some flat pieces of foam.
+There were no exact measurements used here, I just wanted more surface area on my aerodynamic control surfaces for additional control authority, particularly at lower air speeds where they are less effective.
+Later flight testing showed that at cruising speed, these extensions may not have been needed at all.
+<br>
+There are two 9g servos, one for the elevator providing pitch control and one for the rudder controlling the yaw axis. For simplicity and to reduce cost, there are no ailerons. Roll control relies on yaw-roll coupling via the tip dihedral of the wings, which also provides passive roll stability.
+</p>
+  <div class="photo-grid">
+    <img src="../images/foam_glider/stabilisation.gif" alt="Attitude stabilisation">
+    <img src="../images/foam_glider/front_view.jpg" alt="Tip dihedral">
+  </div>
+  
+  <style>
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 1.129fr 2fr;
+      gap: 10px; /* Optional: space between images */
+    }
+  
+    .photo-grid img {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+<p>
+<br>
+The plane is also fitted with a rudimentary flight controller I built to provide auto-levelling in both pitch and roll axes via two PID loops running at 100 Hz.
+Ideally each axis would be controlled via a pair of cascaded PID loops, as we are trying to control orientation angle (displacement) by actuating aerodynamic control surfaces (controlling angular acceleration),
+but the simpler approach minimises tuning parameters and I believe gives the best chance of chance of a stable flight without any tuning.
+<br>
+Below is a video comparing flight with and without flight controller assistance. The flight controller imposes angle limits on the orientation of the plane, helping to avoid stall and loss of lift from extreme bank angles.
+                  <!-- Video -->
+                  <div class="video-container">
+                    <video autoplay loop muted playsinline>
+                      <source src="../images/foam_glider/flight_controller_testing.mp4" type="video/mp4">
+                    </video>
+                  </div>
+<br>
+Unfortunately before this idea could be explored further, the plane ended up in a very tall tree during a test flight.
+<br>
+It then mysteriously vanished before a rescue mission could be mounted.
+<br><br>
+<div style="text-align: center;">
+  <img src="../images/foam_glider/plane_tree.jpg" alt="Plane in tree" style="width: 80%; max-width: 600px; height: auto;">
+</div>
+</p>
+                </div>
+
+              </section>
+          </div>
+
+      <style>
+        .video-container {
+          display: flex;
+          justify-content: center;
+          margin-top: 20px;
+          margin-bottom: 20px;
+        }
+
+        .video-container video {
+          max-width: 100%;
+          height: auto;
+        }
+      </style>
+
+        <!-- Footer -->
+          <footer id="footer">
+            <div class="inner">
+              <ul class="icons">
+                <li><a href="https://www.linkedin.com/in/john-mai-641a73b5/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+              </ul>
+            </div>
+          </footer>
+
+      </div>
+
+    <!-- Scripts -->
+      <script src="../assets/js/jquery.min.js"></script>
+      <script src="../assets/js/jquery.scrolly.min.js"></script>
+      <script src="../assets/js/jquery.scrollex.min.js"></script>
+      <script src="../assets/js/browser.min.js"></script>
+      <script src="../assets/js/breakpoints.min.js"></script>
+      <script src="../assets/js/util.js"></script>
+      <script src="../assets/js/main.js"></script>
+
+  </body>
+</html>

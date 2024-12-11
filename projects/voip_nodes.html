@@ -1,0 +1,233 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-166813491-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		  gtag('config', 'UA-166813491-1');
+		</script>
+		<title>John Mai - VoIP Nodes</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<!-- Note: The "styleN" class below should match that of the banner element. -->
+					<header id="header" class="alt style2">
+						<a href="../index.html" class="logo"><strong>John Mai</strong></a>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="landing.html">Landing</a></li>
+							<li><a href="generic.html">Generic</a></li>
+							<li><a href="elements.html">Elements</a></li>
+						</ul>
+						<ul class="actions stacked">
+							<li><a href="#" class="button primary fit">Get Started</a></li>
+							<li><a href="#" class="button fit">Log In</a></li>
+						</ul>
+					</nav>
+
+				<!-- Banner -->
+				<!-- Note: The "styleN" class below should match that of the header element. -->
+					<section id="banner" class="style2">
+						<div class="inner">
+							<span class="image">
+								<img src="../images/voip_nodes/header.jpg" alt="" />
+							</span>
+							<header class="major">
+								<h1>VoIP Nodes</h1>
+							</header>
+							<div class="content">
+								<p>Dedicated communication nodes using existing internet infrastructure</p>
+							</div>
+						</div>
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h2>Communication Nodes</h2>
+									</header>
+									<p>Almost everyone I know carries a smartphone, yes, but I think there's still some value in standalone devices for voice communications. They can be ruggedised, made to fit form factors custom to the application's needs, and there's also just the novelty aspect of being picking up a device and only needing to push one button to transmit to another node. I've made a few variants of these devices, each one centred around an ESP8266 microcontroller board, and the total cost in parts can be only $10 a node. They connect to an existing Wi-Fi network, and with a little network configuration, you can place nodes anywhere in the world and communicate between them without a problem. As a matter of fact, I have one with me now in Pittsburgh, USA, which allows me to answer the front door in Perth, Australia, with the push of a button.</p>
+									I want to thank <a href="https://github.com/sven337/arduinostuff/tree/master/babymonitor">sven337</a> for inspiration for this project and the groundwork he laid in the architecture and compression algorithm.
+								</div>
+							</section>
+
+						<!-- Two -->
+							<section id="two" class="spotlights">
+								<section>
+									<a class="image">
+										<img src="../images/voip_nodes/wemos_d1_mini_1.png" alt="" data-position="center center" />
+										<img src="../images/voip_nodes/wemos_d1_mini_2.png" alt="" data-position="center center" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>Hardware</h3>
+											</header>
+											<p>Hardware wise, this is a very simple device in order to keep costs down. It makes heavy use of readily available modules so construction time is minimal as well. The core components are:</p>
+											<ul style="margin-top:-30px;">
+											  <li>WeMos D1 mini ESP8266 board</li>
+											  <li>MAX9814 Electret Mic. + Amplifier with AGC</li>
+											  <li>MCP3201 12 bit SPI ADC</li>
+											  <li>MAX98357 I2S DAC + 3W Class D Amplifier</li>
+											  <li>Speaker (preferably 4Ω to suit the DAC/AMP)</li>
+											</ul>
+											<p>The ESP8266 was chosen as it is low cost and comes with a built in WiFi radio, so no external communication modules need to be added.</p>
+											<p>For the audio input, I used the MAX9814 board, which comes with an electret microphone and amplifier with automatic gain control (AGC). This adjusts the gain automatically, handy for when you need to accommadate people whispering as well as people who shout into the microphone. The GY-MAX4466 is another option, at half the cost but with only manual gain set by a small potentiometer on the back.</p>
+											<p>In order to use of the microphone signal, I needed some kind of ADC (analog to digital converter) to convert the analog (continuous) audio signal into a digital (discrete) form that could be manipulated by the ESP8266. While the ESP8266 did have a built in ADC, it firstly only had a 10 bit resolution, allowing for 1024 discrete voltage levels to be read over its full range (i.e. if the voltage range of the input signal were to only be 25% of full range, this ADC would only measure it at 256 discrete steps). Secondly, and more importantly, I had a hard time trying to read samples from it at anything faster than a few kilohertz, rendering it useless for anything but the lowest quality speech. So I knew an external ADC would be needed; a simple option would be to pick up an I2C ADC, but it turns out that the ESP8266 does not have a hardware I2C interface. While this normally would not be a problem for slower devices, I wanted to push the audio quality of these devices to their max, so I went with the MCP3201 IC, an ADC communicating over SPI with a max sample rate between 50-100 kHz depending on its supply voltage.</p>
+											<p>On the output side, while I could've outputted audio as PWM through a low-pass filter to form a crude single bit DAC (digital to analog converter), I opted for a slightly more sophisticated approach with a proper DAC for better quality audio. Looking at the available peripherals on the ESP8266, I2C would've had to be bit-banged out (not ideal), and SPI was already in use. One option was to just add CS lines to the ADC and DAC and select between them as needed, but I came across the MAX98357 I2S DAC + amplifier module, which surprising the ESP8266 did have an I2S peripheral for. Along with this, a 4Ω speaker on the output would enable the maximum 3W to be output, but a higher impedance speaker would've also worked</p>
+											<p style="margin-top:30px;">So as you can see, hardware selection was done with cost in mind, but with some allowance to improve performance. In summary, to cut costs even further, some options are:</p>
+											<ul style="margin-top:-30px;">
+											  <li>Ditch the external DAC and just pass the I2S output through a single transistor amplifier and a low pass filter to form a crude single bit DAC</li>
+											  <li>Use the GY-MAX4466 microphone board with manual gain control over the more complex MAX9814 board (or just build your own amp)</li>
+											  <li>Look further into sampling with the internal DAC at higher rates.</li>
+											</ul>
+										</div>
+									</div>
+									<a class="image">
+										<img src="../images/voip_nodes/MAX9814.jpg" alt="" data-position="center center" />
+										<img src="../images/voip_nodes/MAX98357.jpg" alt="" data-position="center center" />
+									</a>
+								</section>
+								<section>
+									<a href="../index.html" class="image">
+										<img src="../images/pic09.jpg" alt="" data-position="top center" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>Software</h3>
+											</header>
+											<p>On the software side of things, I used the ESP8266 Arduino core with its C++ variant as it was quick, easy, functional, and I could access hardware at the register level as needed.</p>
+											<p>The ESP8266 runs at 80 MHz, and has a timer interrupt to sample from the ADC over SPI at 20 kHz into a buffer, which should capture input audio components up to 10 kHz without aliasing (see: Nyquist Sampling Theorem).</br>
+											The input audio buffer is a 2x700 uint16_t 2D array, allowing for one of the rows (of 700 elements) to be transmitting while the other is being written to.</br>
+											With 700 uint16_t samples being transmitted at a time, this means 1400 bytes in each packet. This is just a nice round number below the 1500 byte maximum transmission unit (MTU) size of 1500 bytes, leaving room for overhead (20 bytes for IPv4 + 8 bytes for UDP). Larger packet sizes would result in fragmentation into smaller packets, although I haven't experimented with this value much to see if there is an advantage to running with smaller or larger packet sizes.</p>
+											<p>The nodes are currently configured to transmit this data in the form of UDP packets to one or more hardcoded IP addresses sequentially, so while one node is able to send to multiple nodes, there is a limit that I haven't tried to reach yet and no true multicasting has been implemented.</p>
+											<p>On the receiving side of things, the UDP interface object is polled for any incoming packets each loop, which are then fed into a uint16_t 5x700 2D array. The number of rows for this array was just found experimentally, with 5 being the minimum for reliable operation without packets lost or overwritten.</br>Thanks to the I2S peripheral and DMA (direct memory access), we can then just push the entire packet out this interface and not worry about it any further.</p>
+											<p>As you might be able to tell, simply pointing outbound packets at a fixed IPv4 address might work when both devices are on the same network, but this won't work when devices are on different networks. In order to get around this (without exposing the devices to the internet like when port forwarding to the router), I need a computer on each network (raspberry pi, server, whatever). The computers are configured to open a SSH tunnel between them and forward UDP packets through the tunnel (as TCP) and then output them again as UDP packets at the other end.</p>
+											<p>That's basically it. Some variants that I've made have a couple of additional lines of code for push-to-talk buttons or transmission triggered on a volume threshold, but the above code forms the core of all these variants.</p>
+											<p>I haven't made the code public (yet), but please reach out to me if you're interested and I'll provide you access.</p>								
+										</div>
+									</div>
+								</section>
+
+								<section>
+									<a href="../images/voip_nodes/schem2.jpg" class="image">
+										<img src="../images/voip_nodes/schem2.jpg" alt="" data-position="center center" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>Construction</h3>
+											</header>
+											<p>On the left is a wiring diagram for the node I leave at the front door; it has an additional RGB indicator LED, to indicate when it is transmitting (green) and when it is receiving & playing audio (red).</br>
+											On the right is the diagram for the version that is built into a radio handset, and has an extra button that you press to trigger transmission.</p>
+										</div>
+									</div>
+									<a href="../images/voip_nodes/schem1.jpg" class="image">
+										<img src="../images/voip_nodes/schem1.jpg" alt="" data-position="center center" />
+									</a>
+								</section>
+
+
+								<section>
+									<a class="image">
+										<img src="../images/voip_nodes/doorbell_comm2.jpg" alt="" data-position="center center" />
+										<img src="../images/voip_nodes/doorbell_comm3.jpg" alt="" data-position="center center" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>Example 1</h3>
+											</header>
+											<p>This version of the node is housed in an aluminium case for durability. The front plate contains a small hole at the top for a camera, the RGB indicator LED in the middle, and a hole for the microphone at the bottom. The opening for the speakers is at the bottom of the case, hidden from view at first glance. In order to fit the small case, I selected iPhone 6 replacement part speakers, which were available for cheap online. Each of these was 8Ω, so I wired two of them in parallel.</br>
+											The aluminium case housing the components would have also isolated the ESP8266 from the Wi-Fi network, blocking communications. In order to get around this, I used a WeMos D1 mini pro, which features a U.FL connector for an external antenna. The antenna can then be run out the back of the case into the house, which hides it from the outside.</p>
+											<p>This version of the node doesn't have a push-to-talk (PTT) button, and instead calculates the mean value of every 700 samples. If this value exceeds a threshold, audio transmission is enabled for a preconfigured length of time, and the LED lights up green to indicate transmission is enabled.</p>
+										</div>
+									</div>
+									<a class="image">
+										<img src="../images/voip_nodes/doorbell_comm.jpg" alt="" data-position="center center" />
+									</a>
+								</section>
+
+								<section>
+									<a class="image">
+										<img src="../images/voip_nodes/central_comm.jpg" alt="" data-position="center center" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>Example 2</h3>
+											</header>
+											<p>This version was built into an old broken handheld CB radio microphone. I kept the existing switch and speaker, as they were still functional, but the original microphone was fried so I got rid of it. Components are glued to the original PCB, which was kept to provide structural support and hold everything in place.</p>
+											
+										</div>
+									</div>
+									<a class="image">
+										<img src="../images/voip_nodes/central_comm2.jpg" alt="" data-position="center center" />
+										<img src="../images/voip_nodes/central_comm3.jpg" alt="" data-position="center center" />
+									</a>
+								</section>
+
+								<section>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>Bonus Example</h3>
+											</header>
+											<p>This version was put together in less than an hour, designed to fit in an envelop for cheaper postage. Postal guidelines require mail to be less than 1/4" to be classified as a "letter" and qualify for the cheaper shipping, which some components barely met. This ruled out the use of a proper prototype board PCB, so I built it into into a piece of cardboard for small amount of support.</br>
+											(The speaker was omitted once the unit was tested.)</p>
+										</div>
+									</div>
+									<a class="image">
+										<img src="../images/voip_nodes/comm_cardboard.jpg" alt="" data-position="center center" />
+									</a>
+								</section>
+
+							</section>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="https://www.linkedin.com/in/john-mai-641a73b5/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>
